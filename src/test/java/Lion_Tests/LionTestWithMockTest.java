@@ -14,14 +14,14 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class LionTestWithMock {
+public class LionTestWithMockTest {
     Lion lion;
 @Mock
 Feline feline;
 @Test
 public void getKittensTest() throws Exception {
     String sex = "Самец";
-    lion = new Lion(sex);
+    lion = new Lion(sex, feline);
         Mockito.when(feline.getKittens()).thenReturn(1);
     assertEquals(1, lion.getKittens());
 
@@ -29,9 +29,10 @@ public void getKittensTest() throws Exception {
 @Test
     public void getFoodTest() throws Exception {
     String sex = "Самка";
-    Lion lion = new Lion(sex);
+    Lion lion = new Lion(sex, feline);
     Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные, Птицы, Рыба"));
-    assertEquals(List.of("Животные, Птицы, Рыба"), lion.getFood());
+    List<String> actual = lion.getFood();
+    assertEquals(List.of("Животные, Птицы, Рыба"), actual);
 }
 
 }

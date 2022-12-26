@@ -1,0 +1,7 @@
+Animal_Tests\GetFoodUnknownKindAnimalTest.class
+Cat_Tests\CatTest.class
+Lion_Tests\UnknownHasManeTest.class
+Lion_Tests\LionTestWithMockTest.class
+Lion_Tests\LionHasManeTest.class
+Feline_Tests\FelineTest.class
+Animal_Tests\AnimalTest.class
